@@ -73,8 +73,8 @@ export default createClass({
             PropTypes.number,
             PropTypes.string
         ]),
-        useCustomOverflowStyle: PropTypes.bool,
-        customOverflowStyle: PropTypes.string,
+        overrideDefaultViewStyle: PropTypes.bool,
+        viewStyles: PropTypes.object,
         universal: PropTypes.bool,
         style: PropTypes.object,
         children: PropTypes.node,
@@ -568,8 +568,8 @@ export default createClass({
             autoWidthMax,
             style,
             children,
-            useCustomOverflowStyle,
-            customOverflowStyle,
+            overrideDefaultViewStyle,
+            viewStyles,
             ...props
         } = this.props;
         /* eslint-enable no-unused-vars */
@@ -588,9 +588,6 @@ export default createClass({
 
         const viewStyle = {
             ...viewStyleDefault,
-            ...(useCustomOverflowStyle && {
-                overflow: customOverflowStyle
-            }),
             // Hide scrollbars by setting a negative margin
             marginRight: -this.getPaddingWidth() + (scrollbarWidth ? -scrollbarWidth : 0),
             marginBottom: -this.getPaddingHeight() + (scrollbarWidth ? -scrollbarWidth : 0),
@@ -610,7 +607,8 @@ export default createClass({
                 maxHeight: autoHeightMax
             }),
             // Override
-            ...((universal && !didMountUniversal) && viewStyleUniversalInitial)
+            ...((universal && !didMountUniversal) && viewStyleUniversalInitial),
+            ...(overrideDefaultViewStyle && { ...viewStyles })
         };
 
         const viewWrapperStyle = {
