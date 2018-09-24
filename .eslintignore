@@ -3,3 +3,4 @@ lib
 **/webpack.config.js
 **/prepublish.js
 examples/**/server.js
+src/Scrollbars/index.js
