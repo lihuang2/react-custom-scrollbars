@@ -21,19 +21,19 @@ export default createClass({
     },
 
     getScrollTop() {
-        return this.refs.scrollbars.getScrollTop();
+        return this.scrollbars.getScrollTop();
     },
 
     getScrollHeight() {
-        return this.refs.scrollbars.getScrollHeight();
+        return this.scrollbars.getScrollHeight();
     },
 
     getHeight() {
-        return this.refs.scrollbars.getHeight();
+        return this.scrollbars.getHeight();
     },
 
     scrollTop(top) {
-        const { scrollbars } = this.refs;
+        const { scrollbars } = this;
         const scrollTop = scrollbars.getScrollTop();
         const scrollHeight = scrollbars.getScrollHeight();
         const val = MathUtil.mapValueInRange(top, 0, scrollHeight, scrollHeight * 0.2, scrollHeight * 0.8);
@@ -42,7 +42,7 @@ export default createClass({
     },
 
     handleSpringUpdate(spring) {
-        const { scrollbars } = this.refs;
+        const { scrollbars } = this;
         const val = spring.getCurrentValue();
         scrollbars.scrollTop(val);
     },
