@@ -27,7 +27,7 @@ export default function createTests() {
             });
             render(<Root/>, node, function callback() {
                 setTimeout(() => {
-                    const { scrollbars } = this.refs;
+                    const { scrollbars } = this;
                     const $scrollbars = findDOMNode(scrollbars);
                     const $view = scrollbars.refs.view;
                     expect($scrollbars.clientHeight).toBeGreaterThan(0);

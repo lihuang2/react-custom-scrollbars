@@ -19,7 +19,7 @@ export default createClass({
     },
 
     handleUpdate(values) {
-        const { shadowTop, shadowBottom } = this.refs;
+        const { shadowTop, shadowBottom } = this;
         const { scrollTop, scrollHeight, clientHeight } = values;
         const shadowTopOpacity = 1 / 20 * Math.min(scrollTop, 20);
         const bottomScrollTop = scrollHeight - clientHeight;

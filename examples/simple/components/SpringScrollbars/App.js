@@ -7,7 +7,7 @@ export default createClass({
     displayName: 'App',
 
     handleClickRandomPosition() {
-        const { scrollbars } = this.refs;
+        const { scrollbars } = this;
         const scrollHeight = scrollbars.getScrollHeight();
         scrollbars.scrollTop(random(scrollHeight));
     },

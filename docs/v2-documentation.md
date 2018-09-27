@@ -107,7 +107,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 class App extends Component {
   handleClick() {
-    this.refs.scrollbars.scrollToTop()
+    this.scrollbars.scrollToTop()
   },
   render() {
     return (
