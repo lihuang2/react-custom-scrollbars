@@ -13,6 +13,7 @@ import {
     containerStyleAutoHeight,
     viewStyleDefault,
     viewWrapperStyleDefault,
+    viewWrapperStyleAutoWidth,
     viewWrapperStyleAutoHeight,
     viewWrappedStyleDefault,
     viewStyleAutoHeight,
@@ -33,7 +34,7 @@ import {
     renderThumbVerticalDefault
 } from './defaultRenderElements';
 
-class Scrollbars extends React.Component {
+export default class Scrollbars extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

@@ -21,6 +21,10 @@ export const viewWrapperStyleDefault = {
 export const viewWrapperStyleAutoWidth = {
 };
 
+export const viewWrapperStyleAutoHeight = {
+};
+
+
 export const viewWrappedStyleDefault = {
     position: 'relative',
     display: 'block',
